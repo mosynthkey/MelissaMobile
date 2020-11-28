@@ -11,9 +11,36 @@ class ControlPage extends StatelessWidget {
     return ChangeNotifierProvider<ControlModel>(
       create: (_) => ControlModel()..init(),
       child: Scaffold(
-        body: Consumer<ControlModel>(builder: (context, model, child) {
-          return Text("control page");
-        }),
+        body: Consumer<ControlModel>(
+          builder: (context, model, child) {
+            return ListView(children: [
+              Card(
+                margin: const EdgeInsets.all(10.0),
+                child: Container(
+                  height: 120,
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Text('Metronome'),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                margin: const EdgeInsets.all(10.0),
+                child: Container(
+                  height: 120,
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Text('EQ'),
+                    ],
+                  ),
+                ),
+              ),
+            ]);
+          },
+        ),
       ),
     );
   }
